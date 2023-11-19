@@ -5,9 +5,113 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  width: 100vw;
+  height: 100vh;
+  margin: 0px;
+  padding: 0px;
+  background-color: #212529;
+  color: #f8f9fa;
+  font-size: 14px;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.App {
+  position: absolute;
+  top: 20%;
+}
+
+.header {
+  text-align: center;
+  background-color: #212529;
+  color: #f8f9fa;
+}
+
+.weatherDetails {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.weatherDetails, .weatherType, .weatherFooter {
+  font-size: 20px;
+}
+
+.weatherDegree {
+  font-size: 30px;
+}
+
+.weatherFooter {
+  
+  display: flex;
+  justify-content: space-between;
+}
+
+.weatherIcon {
+  background-image: url('https://openweathermap.org/img/wn/10d@2x.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.form {
+  display: flex;
+  padding: 20px;
+}
+
+input {
+  padding: 10px;
+  font-size: inherit;
+  margin-right: 20px;
+  margin-left: 20px;
+  border-radius: 10px;
+}
+
+button {
+  padding: 10px;
+  font-size: inherit;
+  border-radius: 10px;
+  border: none;
+}
+ 
+.weatherFooter, .weatherDegree, .weatherType {
+  margin-top: 50px;
+}
+
+table {
+  border-collapse: collapse;
+  border: 1px solid #f8f9fa;
+  margin-bottom: 70px;
+}
+th {
+  background-color: #f8f9fa;
+  color: #212529;
+}
+th,td {
+  padding: 5px;
+}
+
+
+@media only screen and (min-width: 760px) and (max-width: 1020px) {
+  .App {
+    position: absolute;
+    left: 10%;
+    font-size: 18px;
+  }
+}
+
+
+@media only screen and (min-width: 1020px) {
+  .App {
+    position: absolute;
+    left: 30%;
+    font-size: 18px;
+  }
+}
+
+
+
