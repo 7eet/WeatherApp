@@ -4,20 +4,22 @@ import './index.css'
 import { MyContext } from "./MyContext";
 import ShowCard from "./ShowCard";
 import TextBox from "./TextBox";
+import Toggler from "./Toggler";
 
 function App() {
 
   const [data, setData] = useState(null);
   const [value, setValue] = useState('');
+  const [toggle, setToggle] = useState(false)
 
   return (
-    <div className="App">
-
-      <MyContext.Provider value={{data, setData, value, setValue}} >
-        <ShowCard />
-        <TextBox />
+      <MyContext.Provider value={{data, setData, value, setValue, toggle, setToggle}} >
+        <div className={"App " + (toggle ? " darkMode " : "lightMode") }>
+          <ShowCard />
+          <TextBox />
+          <Toggler />
+        </div>
       </MyContext.Provider>
-    </div>
   );
 }
 

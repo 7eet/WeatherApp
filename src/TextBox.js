@@ -3,31 +3,29 @@ import { MyContext } from "./MyContext";
 
 function TextBox() {
 
-    const {value, setValue, data, setData} = useContext(MyContext)
+    const {value, setValue, data, setData, toggle} = useContext(MyContext)
 
-    const apiKey = "do enter api key"
+    const apikey = process.env.REACT_APP_WEATHER_API_KEY
 
 
     const handleChange = (e) => {
-      console.log(e.target.value);
       setValue(e.target.value);
     }
 
     async function handleSubmit(e) {
       e.preventDefault();
-      console.log(value)
       let response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${value}&appid=${apikey}&units=metric`);
       let json = await response.json();
       setData(json);
-      console.log(data);
+      // console.log(data);
     }
 
   
     return (
-      <div>
-        <form name="location">
-          <input type="text" placeholder="Location" value={value} onChange={handleChange} />
-          <button onClick={handleSubmit}>Get Details</button>
+      <div className={"form " + (data != null ? " bottom " : "")}>
+        <form>
+          <input type="text" className={toggle ? "darkModeText" : "lightModeText"} placeholder="Location" value={value} onChange={handleChange} />
+          <button onClick={handleSubmit} className={toggle ? "darkModeButton" : "lightModeButton"}>Get Details</button>
         </form>
       </div>
     )

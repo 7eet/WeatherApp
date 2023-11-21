@@ -9,8 +9,6 @@ body {
   height: 100vh;
   margin: 0px;
   padding: 0px;
-  background-color: #212529;
-  color: #f8f9fa;
   font-size: 14px;
 }
 
@@ -20,8 +18,46 @@ code {
 }
 
 .App {
+  height: 100vh;
+}
+
+.weatherDetails {
   position: absolute;
-  top: 20%;
+  top: 10%;
+  width: 100vw;
+  text-align: center;
+  font-size: 14px;
+}
+
+p {
+  font-size: 14px;
+}
+
+.form {
+  position: absolute;
+  top: 30%;
+  width: 100vw;
+  margin: 0px 0px 20px 0px;
+}
+
+.bottom {
+  bottom: 0%;
+  top: unset;
+}
+
+form {
+  display: flex;
+  padding: 10px;
+}
+
+form > input, button {
+  width: 100%;
+}
+
+.toggler {
+  margin: 10px;
+  position: absolute;
+  right: 0%;
 }
 
 .header {
@@ -30,19 +66,8 @@ code {
   color: #f8f9fa;
 }
 
-.weatherDetails {
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
-.weatherDetails, .weatherType, .weatherFooter {
-  font-size: 20px;
-}
-
 .weatherDegree {
-  font-size: 30px;
+  font-size: 20px;
 }
 
 .weatherFooter {
@@ -58,17 +83,11 @@ code {
   background-size: contain;
 }
 
-.form {
-  display: flex;
-  padding: 20px;
-}
-
 input {
   padding: 10px;
   font-size: inherit;
-  margin-right: 20px;
-  margin-left: 20px;
   border-radius: 10px;
+  margin-right: 10px;
 }
 
 button {
@@ -77,40 +96,110 @@ button {
   border-radius: 10px;
   border: none;
 }
+
+.weatherType {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
  
 .weatherFooter, .weatherDegree, .weatherType {
   margin-top: 50px;
 }
 
-table {
-  border-collapse: collapse;
-  border: 1px solid #f8f9fa;
-  margin-bottom: 70px;
+.additionalDetails {
+  border: 1px solid white;
+  border-radius: 20px;
+  padding: 20px;
+  margin: 0px 20px;
 }
-th {
+
+.additionalDetails > div {
+  display: flex;
+  justify-content: space-between;
+}
+
+
+
+.lightMode , .darkModeButton {
   background-color: #f8f9fa;
   color: #212529;
 }
-th,td {
-  padding: 5px;
+
+.darkMode, .lightModeButton {
+  background-color: #212529;
+  color: #f8f9fa;
+}
+
+input {
+  border: 0.5px solid ;
+  border-radius: 10px;
+  color: #212529;
+}
+
+.darkModeText {
+  border-color: #f8f9fa;
+  background-color: #212529;
+  color: #f8f9fa;
+}
+
+.lightModeText {
+  border-color: #212529;
 }
 
 
+
+
 @media only screen and (min-width: 760px) and (max-width: 1020px) {
-  .App {
-    position: absolute;
-    left: 10%;
-    font-size: 18px;
+  .additionalDetails {
+    max-width: 50vw;
+    margin: 0px auto;
+  }
+
+  .form > form {
+    display: flex;
+    width: 50vw;
+    margin: 0px auto;
+  }
+
+  .weatherDetails, p {
+    font-size: 16px;  
+  }
+
+  .weatherDegree {
+    font-size: 24px;
+  }
+
+  input, button {
+    font-size: 16px;;
   }
 }
 
 
 @media only screen and (min-width: 1020px) {
-  .App {
-    position: absolute;
-    left: 30%;
+  .additionalDetails {
+    max-width: 50vw;
+    margin: 0px auto;
+  }
+
+  .form > form {
+    display: flex;
+    width: 50vw;
+    margin: 0px auto;
+  }
+
+  .weatherDetails, p {
+    font-size: 18px;  
+  }
+
+  .weatherDegree {
+    font-size: 28px;
+  }
+
+  input, button {
     font-size: 18px;
   }
+
 }
 
 
